@@ -1,8 +1,24 @@
 import pygame
 
-# Initialize Pygame
 pygame.init()
-SCREEN_WIDTH = 640
+screen = pygame.display.set_mode((1000,500))
+pygame.display.set_caption('Crossy Rat')
+new_icon = pygame.image.load("fatrat.webp")
+pygame.display.set_icon(new_icon)
+clock = pygame.time.Clock()
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+
+pygame.display.update()
+clock.tick(60)
+
+
+
+""" SCREEN_WIDTH = 640
 SCREEN_HEIGHT = 480
 PLAYER_SPEED = 5
 CAR_SPEED = 3
@@ -137,7 +153,7 @@ screen.fill(PURPLE)
 all_sprites.draw(screen)
 
 
-"""     # Handle player movement
+    # Handle player movement
 keys = pygame.key.get_pressed()
 if keys[pygame.K_LEFT]:
         player.x -= player_speed
@@ -149,7 +165,7 @@ if keys[pygame.K_DOWN]:
         player.y += player_speed
 
 if player.colliderect(obstacle):
-        print("YOU LOST...") """
+        print("YOU LOST...")
 
 
 pygame.display.flip()
@@ -161,4 +177,4 @@ clock.tick(60)
 
 
 
-pygame.quit()
+pygame.quit() """
