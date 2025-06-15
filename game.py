@@ -15,7 +15,6 @@ tracks_surface = pygame.image.load('subwaytracks2.jpg').convert() # no backgroun
 text_surface = test_font.render('omg a rat', True, 'White')
 
 # moving stuff
-subway_surface = pygame.image.load('subway2.png')
 ratr_surface = pygame.image.load('playerrat_right.png').convert_alpha()
 ratr_rect = ratr_surface.get_rect(midbottom = (40,400))
 """ ratl_surface = pygame.image.load('playerrat_left.png').convert_alpha()
