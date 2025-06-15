@@ -1,11 +1,21 @@
+# setup
 import pygame
+from sys import exit
 
 pygame.init()
-screen = pygame.display.set_mode((1000,500))
+screen = pygame.display.set_mode((1470,980))
 pygame.display.set_caption('Crossy Rat')
 new_icon = pygame.image.load("fatrat.webp")
 pygame.display.set_icon(new_icon)
 clock = pygame.time.Clock()
+test_font = pygame.font.Font('PixelifySans-VariableFont_wght.ttf',50)
+
+# background stuff
+tracks_surface = pygame.image.load('subwaytracks2.jpg')
+text_surface = test_font.render('omg a rat', True, 'White')
+
+# moving stuff
+subway_surface = pygame.image.load('subway2.png')
 
 while True:
     for event in pygame.event.get():
@@ -13,8 +23,13 @@ while True:
             pygame.quit()
             exit()
 
-pygame.display.update()
-clock.tick(60)
+    screen.blit(tracks_surface,(0,0))
+    screen.blit(text_surface,(200,50))
+    screen.blit(subway_surface,(10,10))
+
+    pygame.display.update()
+    clock.tick(60)
+
 
 
 
