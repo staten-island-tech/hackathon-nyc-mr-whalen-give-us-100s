@@ -3,7 +3,7 @@ import pygame
 from sys import exit
 
 pygame.init()
-screen = pygame.display.set_mode((1470,980))
+screen = pygame.display.set_mode((1400,800))
 pygame.display.set_caption('Crossy Rat')
 new_icon = pygame.image.load("fatrat.webp")
 pygame.display.set_icon(new_icon)
@@ -11,21 +11,44 @@ clock = pygame.time.Clock()
 test_font = pygame.font.Font('PixelifySans-VariableFont_wght.ttf',50)
 
 # background stuff
-tracks_surface = pygame.image.load('subwaytracks2.jpg')
+tracks_surface = pygame.image.load('subwaytracks2.jpg').convert() # no backgrounds, no need for alpha
 text_surface = test_font.render('omg a rat', True, 'White')
 
 # moving stuff
 subway_surface = pygame.image.load('subway2.png')
+ratr_surface = pygame.image.load('playerrat_right.png').convert_alpha()
+ratr_rect = ratr_surface.get_rect(midbottom = (40,400))
+""" ratl_surface = pygame.image.load('playerrat_left.png').convert_alpha()
+ratl_xpos = 1300 """
+subway_surface = pygame.image.load('subway3.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
+subway_rect = subway_surface.get_rect(bottomright = (900,100))
 
+# game loop
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
 
+    # surface placement
     screen.blit(tracks_surface,(0,0))
-    screen.blit(text_surface,(200,50))
-    screen.blit(subway_surface,(10,10))
+    screen.blit(text_surface,(100,50))
+
+    # moving rat
+    """ ratr_xpos += 4
+    if ratr_xpos > 1600:
+        ratl_xpos -= 4
+        screen.blit(ratl_surface,(ratl_xpos, rat_ypos))
+    screen.blit(ratr_surface,(ratr_xpos,rat_ypos)) """
+
+    # moving subway 3
+    subway_rect.x -= 2
+    subway_rect.y += 2
+    if subway_rect.bottom > 1100:
+        subway_rect.right = 900
+        subway_rect.bottom = 100
+    screen.blit(subway_surface, subway_rect)
+    screen.blit(ratr_surface, ratr_rect)
 
     pygame.display.update()
     clock.tick(60)
