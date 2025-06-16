@@ -23,9 +23,9 @@ ratl_xpos = 1300 """
 subway0_surface = pygame.image.load('subway0.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
 subway0_rect = subway0_surface.get_rect(bottomright = (800,900))
 subway1_surface = pygame.image.load('subway1.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
-subway1_surface = pygame.transform.scale(subway1_surface, (int(subway1_surface.get_width() * 0.6), int(subway1_surface.get_height() * 0.6)))
-subway1_rect = subway1_surface.get_rect(bottomright = (1250,200))
-subway2_surface = pygame.image.load('subway2.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
+subway1_surface = pygame.transform.scale(subway1_surface, (int(subway1_surface.get_width() * 0.2), int(subway1_surface.get_height() * 0.2)))
+subway1_rect = subway1_surface.get_rect(bottomright = (500,400))
+subway2_surface = pygame.image.load('subway2.jpg').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
 subway2_rect = subway2_surface.get_rect(bottomright = (1350,1100))
 
 # game loop
@@ -56,7 +56,7 @@ while True:
     screen.blit(ratr_surface, ratr_rect)
 
     # moving subway 1
-    subway1_rect.x -= 0.508
+    subway1_rect.x -= 0.50
     subway1_rect.y += 1.2
     if subway1_rect.bottom > 900:
         subway1_rect.right = 1000
