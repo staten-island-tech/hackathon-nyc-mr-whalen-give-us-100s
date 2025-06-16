@@ -22,7 +22,7 @@ ratr_rect = ratr_surface.get_rect(midbottom = (40,400))
 ratl_xpos = 1300 """
 subway0_surface = pygame.image.load('subway0.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
 subway0_rect = subway0_surface.get_rect(bottomright = (800,900))
-subway1_surface = pygame.image.load('subway1.jpg').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
+subway1_surface = pygame.image.load('subway1.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
 subway1_rect = subway1_surface.get_rect(bottomright = (900,1000))
 subway2_surface = pygame.image.load('subway2.jpg').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
 subway2_rect = subway2_surface.get_rect(bottomright = (1000,1100))
