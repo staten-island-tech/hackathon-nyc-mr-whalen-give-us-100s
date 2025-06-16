@@ -23,12 +23,12 @@ ratr_rect = ratr_surface.get_rect(midbottom = (40,400))
 """ ratl_surface = pygame.image.load('playerrat_left.png').convert_alpha()
 ratl_xpos = 1300 """
 subway0_surface = pygame.image.load('subway0.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
-subway0_rect = subway0_surface.get_rect(bottomright = (800,900))
+subway0_rect = subway0_surface.get_rect(bottomright = (900,100))
 subway1_surface = pygame.image.load('subway1.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
-subway1_surface = pygame.transform.scale(subway1_surface, (int(subway1_surface.get_width() * 0.6), int(subway1_surface.get_height() * 0.6)))
-subway1_rect = subway1_surface.get_rect(bottomright = (1250,200))
+subway1_surface = pygame.transform.scale(subway1_surface, (int(subway1_surface.get_width() * 0.2), int(subway1_surface.get_height() * 0.2)))
+subway1_rect = subway1_surface.get_rect(bottomright = (900,100))
 subway2_surface = pygame.image.load('subway2.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
-subway2_rect = subway2_surface.get_rect(bottomright = (1350,1100))
+subway2_rect = subway2_surface.get_rect(bottomright = (1100,100))
 
 # game loop
 while True:
@@ -56,21 +56,20 @@ while True:
         screen.blit(subway0_surface, subway0_rect)
 
         # moving subway 1
-        subway1_rect.x -= 0.508
-        subway1_rect.y += 1.2
+        subway1_rect.x -= 1
+        subway1_rect.y += 2
         if subway1_rect.bottom > 900:
-            subway1_rect.right = 1000
-            subway1_rect.bottom = 200
+            subway1_rect.right = 900
+            subway1_rect.bottom = 100
         screen.blit(subway1_surface, subway1_rect)
 
         # moving subway 2
-        subway2_rect.x -= 0.3
-        subway2_rect.y += 1.5
+        subway2_rect.x += 2.6
+        subway2_rect.y += 3
         if subway2_rect.bottom > 1100:
-            subway2_rect.right = 1055
-            subway2_rect.bottom = 300
+            subway2_rect.right = 1100
+            subway2_rect.bottom = 100
         screen.blit(subway2_surface, subway2_rect)
-        screen.blit(ratr_surface, ratr_rect)
 
         screen.blit(text_surface,(100,50))
         screen.blit(instructtext_surface, (100,100))
