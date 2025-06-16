@@ -166,8 +166,8 @@ while True:
             game_active = True
             ratr_rect = ratr_surface.get_rect(midbottom = (40,400))
             subway0_rect = subway0_surface.get_rect(bottomright = (900,100))
-            subway1_rect = subway1_surface.get_rect(bottomright = (1250,200))
-            subway2_rect = subway2_surface.get_rect(bottomright = (1350,1100))
+            subway1_rect = subway1_surface.get_rect(bottomright = (900,100))
+            subway2_rect = subway2_surface.get_rect(bottomright = (1100,100))
 
     pygame.display.update()
     clock.tick(60)
