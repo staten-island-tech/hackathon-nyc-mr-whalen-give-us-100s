@@ -15,12 +15,17 @@ tracks_surface = pygame.image.load('subwaytracks2.jpg').convert() # no backgroun
 text_surface = test_font.render('omg a rat', True, 'White')
 
 # moving stuff
+#rect= size of object, midbottom/midright=position of object
 ratr_surface = pygame.image.load('playerrat_right.png').convert_alpha()
 ratr_rect = ratr_surface.get_rect(midbottom = (40,400))
 """ ratl_surface = pygame.image.load('playerrat_left.png').convert_alpha()
 ratl_xpos = 1300 """
-subway_surface = pygame.image.load('subway3.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
-subway_rect = subway_surface.get_rect(bottomright = (900,100))
+subway0_surface = pygame.image.load('subway0.png').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
+subway0_rect = subway0_surface.get_rect(bottomright = (800,900))
+subway1_surface = pygame.image.load('subway1.jpg').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
+subway1_rect = subway1_surface.get_rect(bottomright = (900,1000))
+subway2_surface = pygame.image.load('subway2.jpg').convert_alpha() # convert to something pygame can work w, alpha = black n white backgrounds
+subway2_rect = subway2_surface.get_rect(bottomright = (1000,1100))
 
 # game loop
 while True:
@@ -40,14 +45,33 @@ while True:
         screen.blit(ratl_surface,(ratl_xpos, rat_ypos))
     screen.blit(ratr_surface,(ratr_xpos,rat_ypos)) """
 
-    # moving subway 3
-    subway_rect.x -= 2
-    subway_rect.y += 2
-    if subway_rect.bottom > 1100:
-        subway_rect.right = 900
-        subway_rect.bottom = 100
-    screen.blit(subway_surface, subway_rect)
+    # moving subway 0
+    subway0_rect.x -= 2
+    subway0_rect.y += 2
+    if subway0_rect.bottom > 1100:
+        subway0_rect.right = 900
+        subway0_rect.bottom = 100
+    screen.blit(subway0_surface, subway0_rect)
     screen.blit(ratr_surface, ratr_rect)
+
+    # moving subway 1
+    subway1_rect.x -= 0.508
+    subway1_rect.y += 1.2
+    if subway1_rect.bottom > 1200:
+        subway1_rect.right = 1000
+        subway1_rect.bottom = 200
+    screen.blit(subway1_surface, subway1_rect)
+    screen.blit(ratr_surface, ratr_rect)
+
+    # moving subway 2
+    subway2_rect.x -= 0.28
+    subway2_rect.y += 1.3
+    if subway2_rect.bottom > 1300:
+        subway2_rect.right = 1055
+        subway2_rect.bottom = 300
+    screen.blit(subway2_surface, subway2_rect)
+    screen.blit(ratr_surface, ratr_rect)
+
 
     pygame.display.update()
     clock.tick(60)
