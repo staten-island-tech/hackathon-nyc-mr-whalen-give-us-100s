@@ -143,7 +143,7 @@ while True:
             exit() """
         
         # completion
-        if ratr_rect.right > 1600:
+        if ratr_rect.right > 1450:
             game_active = False
             screen.fill('goldenrod')
             funnyrat_surface = pygame.image.load('veryroundrat.png')
